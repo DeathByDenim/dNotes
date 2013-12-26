@@ -1,8 +1,8 @@
 console.log("dNotes_server_browser.js", "Start");
 
-function playernameClicked(source)
+function playernameClicked(name)
 {
-	dNotes_create_note_window(source, {'rememberPosition': false, 'offset': 'center', 'left': 0, 'top': 0, "containment": ".div_body_cont"});
+	dNotes_createNoteWindow(name, {'rememberPosition': false, 'offset': 'center', 'left': 0, 'top': 0, "containment": ".div_body_cont"});
 }
 
 model.processGameBeacon = function(payload, host_id)
@@ -18,9 +18,9 @@ model.processGameBeacon = function(payload, host_id)
 
 	for(var i = 0; i < payload.player_names.length; i++)
 	{
-		if(!dNotes_has_note(payload.player_names[i]))
+		if(dNotes_hasNote(payload.player_names[i]))
 		{
-			payload.player_names[i] = '<span class=""><span class="dNotes_box_left"></span><span class="dNotes_playername">' + payload.player_names[i] + '</span><a href="#" onclick="playernameClicked(\'' + payload.player_names[i] + '\'); return false;"><img src="../../mods/dNotes/img/dNotes_icon_note.png" class="dNotes_icon" /></a></span>';
+			payload.player_names[i] = '<span class=""><span class="dNotes_playername">' + payload.player_names[i] + '</span><a href="#" onclick="playernameClicked(\'' + (payload.player_names[i]) + '\'); return false;"><div class="dNotes_icon_note"></div></a></span>';
 		}
 	}
 

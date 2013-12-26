@@ -1,0 +1,22 @@
+{
+    "context": "client",
+    "identifier": "com.pa.DeathByDenim.dNotes",
+    "display_name": "Notes",
+    "description": "Keep notes on players for future reference",
+    "author": "DeathByDenim",
+    "version": "0.1",
+    "signature": "not yet implemented",
+    "priority": 110,
+    "enabled": true,
+    "id": "dNotes",
+    "forum": "http://forums.uberent.com/",
+    "category": ["ui"],
+    "server_browser": ["coui://ui/mods/dNotes/dNotes_server_browser.js"],
+    "global_mod_list": ["coui://ui/mods/dNotes/dNotes_global.js","coui://ui/mods/dNotes/dNotes_global.css"],
+    "live_game": ["coui://ui/mods/dNotes/dNotes_live_game.js"],
+    "social": ["coui://ui/mods/dNotes/dNotes_social.js"],
+    "lobby": ["coui://ui/mods/dNotes/dNotes_lobby.js"],
+    "requires": ["rFloatFrame"],
+    "date": "2013/12/24",
+    "build": "58999"
+}
