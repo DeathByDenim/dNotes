@@ -1,7 +1,16 @@
-.dNotes_icon_note
+.dNotes_icon_note_yes
 {
 	display: inline-block;
-	background-image: url('../../mods/dNotes/img/dNotes_icon_note.png');
+	background-image: url('../../mods/dNotes/img/dNotes_icon_note_yes.png');
+	background-repeat:repeat;
+	width: 14px;
+	height: 16px;
+}
+
+.dNotes_icon_note_no
+{
+	display: inline-block;
+	background-image: url('../../mods/dNotes/img/dNotes_icon_note_no.png');
 	background-repeat:repeat;
 	width: 14px;
 	height: 16px;

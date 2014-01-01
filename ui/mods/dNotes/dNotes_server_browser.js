@@ -20,7 +20,7 @@ model.processGameBeacon = function(payload, host_id)
 	{
 		if(dNotes_hasNote(payload.player_names[i]))
 		{
-			payload.player_names[i] = '<span class=""><span class="dNotes_playername">' + payload.player_names[i] + '</span><a href="#" onclick="playernameClicked(\'' + (payload.player_names[i]) + '\'); return false;"><div class="dNotes_icon_note"></div></a></span>';
+			payload.player_names[i] = '<span><span class="dNotes_playername">' + payload.player_names[i] + '</span><a href="#" onclick="dNotes_createNoteWindow(\'' + (payload.player_names[i]) + '\', {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); return false;"><div class="dNotes_icon_note_yes"></div></a></span>';
 		}
 	}
 

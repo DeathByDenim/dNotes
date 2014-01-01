@@ -1,3 +1,30 @@
+function dNotes_hasNote(name)
+{
+	if(!localStorage.dNotes_notes)
+		return false;
+
+	var notes = decode(localStorage.dNotes_notes);
+	if(notes[name])
+		return true;
+	else
+		return false;
+}
+
+function dNotes_toNumericName(name)
+{
+	var numeric_name = "";
+	name = (String(name));
+	for(var i = 0; i < name.length; i++)
+		numeric_name += name.charCodeAt(i);
+
+	return numeric_name;
+}
+
+function dNotes_generateId(name)
+{
+	return "dNotes_" + dNotes_toNumericName(name) + "_icon";
+}
+
 function dNotesViewModel(name, numeric_name)
 {
 	var self = this;
@@ -27,21 +54,7 @@ function dNotesViewModel(name, numeric_name)
 	{
 		document.getElementById('dNotes_' + numeric_name + '_frame').remove();
 	}
-/*
-	self.hasNote = ko.computed( function()
-	{
-		console.log("dNotes: ", name);
 
-		if(!localStorage.dNotes_notes)
-			return false;
-
-		var note = decode(localStorage.dNotes_notes);
-		if(note[name])
-			return true;
-		else
-			return false;
-	});
-*/
 	self.saveNote = function()
 	{
 		var notes = {};
@@ -51,30 +64,29 @@ function dNotesViewModel(name, numeric_name)
 		notes[name] = self.note();
 
 		localStorage.dNotes_notes = encode(notes);
-		
+
+		var iconspan = $('#'+dNotes_generateId(self.name()));
+		if(iconspan)
+		{
+			iconspan.removeClass("dNotes_icon_note_yes dNotes_icon_note_no");
+			if(dNotes_hasNote(self.name()) == true)
+			{
+				iconspan.addClass("dNotes_icon_note_yes");
+			}
+			else
+			{
+				iconspan.addClass("dNotes_icon_note_no");
+			}
+		}
+
 		self.closeWindow();
 	};
-}
-
-function dNotes_hasNote(name)
-{
-	if(!localStorage.dNotes_notes)
-		return false;
-
-	var notes = decode(localStorage.dNotes_notes);
-	if(notes[name])
-		return true;
-	else
-		return false;
 }
 
 function dNotes_createNoteWindow(name, options)
 {
 	// Convert name to ascii-numbers to prevent horrible stuff from happening with all of those fancy names out there. I hear some even have spaces! Gasp!
-	var numeric_name = "";
-	name = (String(name));
-	for(var i = 0; i < name.length; i++)
-		numeric_name += name.charCodeAt(i);
+	var numeric_name = dNotes_toNumericName(name);
 
 	createFloatingFrame('dNotes_' + numeric_name + '_frame', 270, 320, options);
 	$('#dNotes_' + numeric_name + '_frame_content').append(
@@ -101,3 +113,17 @@ function dNotes_createNoteWindow(name, options)
 	var dModel = new dNotesViewModel(name, numeric_name);
 	ko.applyBindings(dModel, document.getElementById('dNotes_' + numeric_name + '_frame'))
 }
+
+ko.bindingHandlers.dNotes_class =
+{
+	update: function(element, valueAccessor, allBindings)
+	{
+		var value = valueAccessor();
+
+		$(element).removeClass("dNotes_icon_note_yes dNotes_icon_note_no");
+		if(value == true)
+			$(element).addClass("dNotes_icon_note_yes");
+		else
+			$(element).addClass("dNotes_icon_note_no");
+	}
+};
