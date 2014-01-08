@@ -127,3 +127,18 @@ ko.bindingHandlers.dNotes_class =
 			$(element).addClass("dNotes_icon_note_no");
 	}
 };
+
+/*
+// PA Stats doesn't play nicely with the priority system so it loads *after* dNotes. Correct that.
+var dNotes_pastatsindex = scene_mod_list['game_over'].indexOf('http://nanodesu.info/stuff/pa/mods/live/pastats/scenes/game_over.js');
+if(dNotes_pastatsindex >= 0)
+{
+	var mygameroverjsindex = scene_mod_list['game_over'].indexOf('coui://ui/mods/dNotes/dNotes_game_over.js');
+
+	if(mygameroverjsindex >= 0)
+	{
+		scene_mod_list['game_over'][mygameroverjsindex] = 'http://nanodesu.info/stuff/pa/mods/live/pastats/scenes/game_over.js';
+		scene_mod_list['game_over'][dNotes_pastatsindex] = 'coui://ui/mods/dNotes/dNotes_game_over.js';
+	}
+}
+*/

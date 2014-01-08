@@ -1,5 +1,3 @@
-console.log("dNotes_server_browser.js", "Start");
-
 function playernameClicked(name)
 {
 	dNotes_createNoteWindow(name, {'rememberPosition': false, 'offset': 'center', 'left': 0, 'top': 0, "containment": ".div_body_cont"});
@@ -37,8 +35,3 @@ model.processGameBeacon = function(payload, host_id)
 
 	return game;
 };
-
-$(document).ready(function () {
-});
-
-console.log("dNotes_server_browser.js", "End");
