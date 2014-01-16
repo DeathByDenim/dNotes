@@ -52,7 +52,8 @@ function dNotesViewModel(name, numeric_name)
 
 	self.closeWindow = function()
 	{
-		document.getElementById('dNotes_' + numeric_name + '_frame').remove();
+		$('#dNotes_' + numeric_name + '_frame').remove();
+//		var frame = document.getElementById('dNotes_' + numeric_name + '_frame').remove();
 	}
 
 	self.saveNote = function()
@@ -87,6 +88,12 @@ function dNotes_createNoteWindow(name, options)
 {
 	// Convert name to ascii-numbers to prevent horrible stuff from happening with all of those fancy names out there. I hear some even have spaces! Gasp!
 	var numeric_name = dNotes_toNumericName(name);
+	
+	if($('#dNotes_' + numeric_name + '_frame').length > 0)
+	{
+		$('#dNotes_' + numeric_name + '_frame').focus();
+		return;
+	}
 
 	createFloatingFrame('dNotes_' + numeric_name + '_frame', 270, 320, options);
 	$('#dNotes_' + numeric_name + '_frame_content').append(
