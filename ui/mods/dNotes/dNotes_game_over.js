@@ -26,14 +26,16 @@ if(decode(localStorage['pa_stats_wants_to_send_']))
 		'<tr>' +
 		'  <td>PLAYERS:</td>' +
 		'  <td colspan="14" style="text-align: left" data-bind="foreach: dNotes_armies">' +
-		'    <span class="dNotes_color">' +
-		'      <span class="dNotes_color_primary" data-bind="style: { backgroundColor: $data.primary_color_rgb}"></span>' +
-		'      <span class="dNotes_color_secondary" data-bind="style: { backgroundColor: $data.secondary_color_rgb}"></span>' +
-		'      <span class="dNotes_color_primary" data-bind="style: { backgroundColor: $data.primary_color_rgb}"></span>' +
+		'    <span class="dNotes_item">' +
+		'      <span class="dNotes_color">' +
+		'        <span class="dNotes_color_primary" data-bind="style: { backgroundColor: $data.primary_color_rgb}"></span>' +
+		'        <span class="dNotes_color_secondary" data-bind="style: { backgroundColor: $data.secondary_color_rgb}"></span>' +
+		'        <span class="dNotes_color_primary" data-bind="style: { backgroundColor: $data.primary_color_rgb}"></span>' +
+		'      </span>' +
+		'      <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes.createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes.hasNote($data.name), attr: {id: dNotes.generateId($data.name)}"></span>' +
+		'      <span data-bind="text: $data.name, style: { marginRight: $data.ai ? \'0px\' : \'40px\' }"></span>' +
+		'      <span data-bind="visible: $data.ai" style="margin-right: 40px"> AI</span>' +
 		'    </span>' +
-		'    <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes.createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes.hasNote($data.name), attr: {id: dNotes.generateId($data.name)}"></span>' +
-		'    <span data-bind="text: $data.name, style: { marginRight: $data.ai ? \'0px\' : \'40px\' }"></span>' +
-		'    <span data-bind="visible: $data.ai" style="margin-right: 40px"> AI</span>' +
 		'  </td>' +
 		'</tr><tr><td><span><br /></span></td></tr>');
 }
