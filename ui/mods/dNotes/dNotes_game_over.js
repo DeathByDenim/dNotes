@@ -1,3 +1,5 @@
+(function () {
+
 model.dNotes_armies = ko.observableArray([]);
 
 var dNotes_old_server_state = handlers.server_state;
@@ -29,7 +31,7 @@ if(decode(localStorage['pa_stats_wants_to_send_']))
 		'      <span class="dNotes_color_secondary" data-bind="style: { backgroundColor: $data.secondary_color_rgb}"></span>' +
 		'      <span class="dNotes_color_primary" data-bind="style: { backgroundColor: $data.primary_color_rgb}"></span>' +
 		'    </span>' +
-		'    <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes_createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes_hasNote($data.name), attr: {id: dNotes_generateId($data.name)}"></span>' +
+		'    <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes.createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes.hasNote($data.name), attr: {id: dNotes.generateId($data.name)}"></span>' +
 		'    <span data-bind="text: $data.name, style: { marginRight: $data.ai ? \'0px\' : \'40px\' }"></span>' +
 		'    <span data-bind="visible: $data.ai" style="margin-right: 40px"> AI</span>' +
 		'  </td>' +
@@ -49,7 +51,7 @@ else
 		'    </td>' +
 		'    <td style="padding-right: 3px;">' +
 		'      <div class="td_selected">' +
-		'        <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes_createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes_hasNote($data.name), attr: {id: dNotes_generateId($data.name)}"></span>' +
+		'        <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes.createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes.hasNote($data.name), attr: {id: dNotes.generateId($data.name)}"></span>' +
 		'      </div>' +
 		'    </td>' +
 		'    <td class="td_name">' +
@@ -60,3 +62,5 @@ else
 		'</tbody></table>'
 	);
 }
+
+})();

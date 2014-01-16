@@ -1,10 +1,12 @@
+(function() {
+
 model.dNotes_playerswithnotes = ko.observableArray([]);
 if(localStorage.dNotes_notes)
 {
 	var notes = decode(localStorage.dNotes_notes);
 	for(var player in notes)
 	{
-		if(dNotes_hasNote(player))
+		if(dNotes.hasNote(player))
 			model.dNotes_playerswithnotes.push({name: player});
 	}
 }
@@ -48,14 +50,16 @@ $('#social_tabs').append(
 $('.tr_not_selected').prepend(
 	'                                <td style="padding-right: 3px;">                         ' +
 	'                                    <div class="td_selected">' +
-	'                                        <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes_createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes_hasNote($data.name), attr: {id: dNotes_generateId($data.name)}"></span>' +
+	'                                        <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes.createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes.hasNote($data.name), attr: {id: dNotes.generateId($data.name)}"></span>' +
 	'                                    </div>                                                                              ' +
 	'                                </td>'
 );
 $('.tr_selected').prepend(
 	'                                <td style="padding-right: 3px;">                         ' +
 	'                                    <div class="td_selected">' +
-	'                                        <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes_createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes_hasNote($data.name), attr: {id: dNotes_generateId($data.name)}"></span>' +
+	'                                        <span class="dNotes_icon_note_no" data-bind="click: function () { dNotes.createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes.hasNote($data.name), attr: {id: dNotes.generateId($data.name)}"></span>' +
 	'                                    </div>                                                                              ' +
 	'                                </td>'
 );
+
+})();

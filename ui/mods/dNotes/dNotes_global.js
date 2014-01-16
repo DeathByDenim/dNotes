@@ -1,4 +1,8 @@
-function dNotes_hasNote(name)
+var dNotes = (function() {
+
+var dNotes = {};
+
+dNotes.hasNote = function(name)
 {
 	if(!localStorage.dNotes_notes)
 		return false;
@@ -10,7 +14,7 @@ function dNotes_hasNote(name)
 		return false;
 }
 
-function dNotes_toNumericName(name)
+function toNumericName(name)
 {
 	var numeric_name = "";
 	name = (String(name));
@@ -20,9 +24,9 @@ function dNotes_toNumericName(name)
 	return numeric_name;
 }
 
-function dNotes_generateId(name)
+dNotes.generateId = function(name)
 {
-	return "dNotes_" + dNotes_toNumericName(name) + "_icon";
+	return "dNotes_" + toNumericName(name) + "_icon";
 }
 
 function dNotesViewModel(name, numeric_name)
@@ -53,7 +57,6 @@ function dNotesViewModel(name, numeric_name)
 	self.closeWindow = function()
 	{
 		$('#dNotes_' + numeric_name + '_frame').remove();
-//		var frame = document.getElementById('dNotes_' + numeric_name + '_frame').remove();
 	}
 
 	self.saveNote = function()
@@ -66,11 +69,11 @@ function dNotesViewModel(name, numeric_name)
 
 		localStorage.dNotes_notes = encode(notes);
 
-		var iconspan = $('#'+dNotes_generateId(self.name()));
+		var iconspan = $('#'+dNotes.generateId(self.name()));
 		if(iconspan)
 		{
 			iconspan.removeClass("dNotes_icon_note_yes dNotes_icon_note_no");
-			if(dNotes_hasNote(self.name()) == true)
+			if(dNotes.hasNote(self.name()) == true)
 			{
 				iconspan.addClass("dNotes_icon_note_yes");
 			}
@@ -84,10 +87,10 @@ function dNotesViewModel(name, numeric_name)
 	};
 }
 
-function dNotes_createNoteWindow(name, options)
+dNotes.createNoteWindow = function(name, options)
 {
 	// Convert name to ascii-numbers to prevent horrible stuff from happening with all of those fancy names out there. I hear some even have spaces! Gasp!
-	var numeric_name = dNotes_toNumericName(name);
+	var numeric_name = toNumericName(name);
 	
 	if($('#dNotes_' + numeric_name + '_frame').length > 0)
 	{
@@ -134,6 +137,9 @@ ko.bindingHandlers.dNotes_class =
 			$(element).addClass("dNotes_icon_note_no");
 	}
 };
+
+return dNotes;
+})();
 
 /*
 // PA Stats doesn't play nicely with the priority system so it loads *after* dNotes. Correct that.
