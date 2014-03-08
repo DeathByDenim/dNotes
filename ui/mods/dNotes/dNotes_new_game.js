@@ -1,1 +1,7 @@
-$('.tr_not_selected').prepend('<td class="table_td_roster" style="padding-right: 3px"><span class="dNotes_icon_note_no" data-bind="click: function () { dNotes.createNoteWindow(name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0, \'containment\': \'.div_body_cont\'}); }, dNotes_class: dNotes.hasNote(name), attr: {id: dNotes.generateId($data.name)}"></span></td>');
+$('.slot-player-text:not(.host)').before(
+	'<!-- ko ifnot: slot.isAI -->' +
+	'<!-- ko ifnot: slot.isEmpty -->' +
+	'<div class="dNotes_icon_note_no" style="margin-right: .2em" data-bind="click: function () { dNotes.createNoteWindow(slot.playerName(), {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0}); }, dNotes_class: dNotes.hasNote(slot.playerName()), attr: {id: dNotes.generateId(slot.playerName())}, clickBubble: false"></div>' +
+	'<!-- /ko -->' +
+	'<!-- /ko -->'
+);
