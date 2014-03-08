@@ -20,12 +20,15 @@
 {
 	border: 1px solid rgba(255,255,255,.25);
 	box-shadow: 0 0 0 1px rgba(255,255,255,.5);
+	padding: 1px;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 .dNotes_window
 {
-    height: 300px;
-    width: 250px;
+    height: 321px;
+    width: 262px;
     margin: 0px auto;
     font-family: 'DINPRO-LIGHT';
     font-size: .8em;
