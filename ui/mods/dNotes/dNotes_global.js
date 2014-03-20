@@ -108,7 +108,7 @@ dNotes.createNoteWindow = function(name, options)
 		'        </a>' +
 		'    </div>    ' +
 		'    <div class="dNotes_window_cont">' +
-		'        <textarea class="input_text input_chat_text dNotes_textarea" data-bind="value: note" />' +
+		'        <textarea class="dNotes_textarea input_text input_chat_text" data-bind="value: note" />' +
 		'    </div>' +
 		'    <div class="" style="float:right;">' +
 		'        <a data-bind="click_sound: \'default\', rollover_sound: \'default\'">' +

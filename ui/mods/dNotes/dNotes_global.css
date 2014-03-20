@@ -58,9 +58,9 @@
 
 .dNotes_textarea
 {
-	width: 240px;
+	width: 240px !important;
 	height: 235px;
-	background: rgba(0,0,0,.8);
+	background: rgba(0,0,0,.8) !important;
 	font-family: 'DINPRO-LIGHT';
     font-size: 1.2em;
 }
