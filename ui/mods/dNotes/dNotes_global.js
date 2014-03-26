@@ -104,7 +104,7 @@ dNotes.createNoteWindow = function(name, options)
 		'    <div class="dNotes_window_header">' +
 		'        <span data-bind="text: htmlname"></span>' +
 		'        <a data-bind="click_sound: \'default\'">' +
-		'            <img style="float:right;" src="../shared/img/close_btn.png" data-bind="click: closeWindow" />' +
+		'            <img style="float:right;" src="coui://ui/main/shared/img/close_btn.png" data-bind="click: closeWindow" />' +
 		'        </a>' +
 		'    </div>    ' +
 		'    <div class="dNotes_window_cont">' +

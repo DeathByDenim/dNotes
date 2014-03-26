@@ -1,7 +1,7 @@
 .dNotes_icon_note_yes
 {
 	display: inline-block;
-	background-image: url('../../mods/dNotes/img/dNotes_icon_note_yes.png');
+	background-image: url('coui://ui/mods/dNotes/img/dNotes_icon_note_yes.png');
 	background-repeat:repeat;
 	width: 14px;
 	height: 16px;
@@ -10,7 +10,7 @@
 .dNotes_icon_note_no
 {
 	display: inline-block;
-	background-image: url('../../mods/dNotes/img/dNotes_icon_note_no.png');
+	background-image: url('coui://ui/mods/dNotes/img/dNotes_icon_note_no.png');
 	background-repeat:repeat;
 	width: 14px;
 	height: 16px;
