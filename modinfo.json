@@ -1,49 +1,65 @@
 {
-	"author" : "DeathByDenim",
-	"build" : "63475",
-	"category" : [ "ui" ],
-	"context" : "client",
-	"date" : "2014/04/10",
-	"description" : "Keep notes on players for future reference",
-	"description_nl" : "Houd notities over spelers bij voor toekomstig gebruik.",
-	"description_de" : "Führen Sie Notizen über die andere Spieler für zukünftige Verwendung.",
-	"description_fr" : "Enregistrer des notes à propos des autres joueurs pour utiliser en futur.",
-	"display_name" : "Notes",
-	"display_name_de" : "Notizen",
-	"display_name_fr" : "Notes",
-	"display_name_nl" : "Notities",
-	"enabled" : true,
-	"forum" : "https://forums.uberent.com/threads/rel-notes-v1-0.55281/",
-	"icon": "http://pamods.github.io/icons/dNotes.png",
-	"id" : "dNotes",
-	"identifier" : "com.pa.DeathByDenim.dNotes",
-	"priority" : 100,
-	"requires" : [
-		"rFloatFrame"
-	],
-	"signature" : "not yet implemented",
-	"scenes" : {
-		"game_over" : [
-			"coui://ui/mods/dNotes/dNotes_game_over.js",
-			"coui://ui/mods/dNotes/dNotes_game_over.css"
-		],
-		"global_mod_list" : [
-			"coui://ui/mods/dNotes/dNotes_global.js",
-			"coui://ui/mods/dNotes/dNotes_global.css"
-		],
-		"live_game" : [
-			"coui://ui/mods/dNotes/dNotes_live_game.js"
-		],
-		"new_game" : [
-			"coui://ui/mods/dNotes/dNotes_new_game.js"
-		],
-		"server_browser" : [
-			"coui://ui/mods/dNotes/dNotes_server_browser.js",
-			"coui://ui/mods/dNotes/dNotes_server_browser.css"
-		],
-		"social" : [
-			"coui://ui/mods/dNotes/dNotes_social.js"
-		]
-	},
-	"version" : "1.4"
+    "author": "DeathByDenim",
+    "build": "74525",
+    "category": [
+        "ui"
+    ],
+    "context": "client",
+    "date": "2014/11/11",
+    "description": "Keep notes on players for future reference",
+    "description_nl": "Houd notities over spelers bij voor toekomstig gebruik.",
+    "description_de": "Führen Sie Notizen über die andere Spieler für zukünftige Verwendung.",
+    "description_fr": "Enregistrer des notes à propos des autres joueurs pour utiliser en futur.",
+    "display_name": "Notes",
+    "display_name_de": "Notizen",
+    "display_name_fr": "Notes",
+    "display_name_nl": "Notities",
+    "enabled": true,
+    "forum": "https://forums.uberent.com/threads/rel-notes-v1-0.55281/",
+    "icon": "http://pamods.github.io/icons/dNotes.png",
+    "id": "dNotes",
+    "identifier": "com.pa.DeathByDenim.dNotes",
+    "priority": 100,
+    "scenes": {
+        "gamestats": [
+            "coui://ui/mods/dNotes/dNotes_gamestats.js"
+        ],
+        "global_mod_list": [
+            "coui://ui/mods/dNotes/dNotes_global.js",
+            "coui://ui/mods/dNotes/dNotes_global.css"
+        ],
+        "live_game": [
+            "coui://ui/mods/dNotes/dNotes_live_game.js"
+        ],
+        "live_game_players": [
+            "coui://ui/mods/dNotes/dNotes_live_game_players.js"
+        ],
+        "new_game": [
+            "coui://ui/mods/dNotes/dNotes_new_game.js"
+        ],
+        "server_browser": [
+            "coui://ui/mods/dNotes/dNotes_server_browser.js",
+            "coui://ui/mods/dNotes/dNotes_server_browser.css"
+        ],
+        "start": [
+            "coui://ui/mods/dNotes/dNotes_start.js"
+        ],
+        "uberbar": [
+            "coui://ui/mods/dNotes/dNotes_uberbar.js"
+        ],
+        "LiveGame_FloatZone": [
+            "coui://ui/mods/dNotes/dNotes_livegame_floatzone.js"
+        ]
+    },
+    "signature": "not yet implemented",
+    "version": "1.4",
+    "installpath": "/home/jarno/.local/Uber Entertainment/Planetary Annihilation/mods/dNotes",
+    "dependencies": [
+        "com.pa.raevn.rfloatframe"
+    ],
+    "content_id": "com.pa.DeathByDenim.dNotes",
+    "store_id": "com.pahub.content.plugin.store.mod.client",
+    "required": {
+        "com.pa.raevn.rfloatframe": "*"
+    }
 }

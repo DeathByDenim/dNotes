@@ -1,7 +1,15 @@
 (function() {
 
-$('.div_primary_color').after('<span class="dNotes_icon_note_no receiveMouse" data-bind="click: function() { dNotes.createNoteWindow($data.name, {\'rememberPosition\': false, \'offset\': \'center\', \'left\': 0, \'top\': 0}); }, dNotes_class: dNotes.hasNote($data.name), attr: {id: dNotes.generateId($data.name)}, clickBubble: false"></span>');
+	// Comes from players panel and creates a new not in the floatzone panel.
+	handlers.dNotes_message = function(payload) {
+		api.panels.LiveGame_FloatZone.message("dNotes_newnote", payload.name);
+	}
 
-$('.div_name_header').css('width', '189px');
+	// Comes from the floatzone panel and surpresses keypresses being passed
+	// to the game when the textarea for typing is active.
+	handlers.dNotes_input = function(surpress) {
+		api.game.captureKeyboard(surpress);
+		inputmap.paused(surpress);
+	}
 
 })();
