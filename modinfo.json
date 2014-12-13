@@ -1,11 +1,11 @@
 {
     "author": "DeathByDenim",
-    "build": "74525",
+    "build": "76262",
     "category": [
         "ui"
     ],
     "context": "client",
-    "date": "2014/11/11",
+    "date": "2014/12/13",
     "description": "Keep notes on players for future reference",
     "description_nl": "Houd notities over spelers bij voor toekomstig gebruik.",
     "description_de": "Führen Sie Notizen über die andere Spieler für zukünftige Verwendung.",
@@ -52,7 +52,7 @@
         ]
     },
     "signature": "not yet implemented",
-    "version": "1.4",
+    "version": "1.5",
     "installpath": "/home/jarno/.local/Uber Entertainment/Planetary Annihilation/mods/dNotes",
     "dependencies": [
         "com.pa.raevn.rfloatframe"

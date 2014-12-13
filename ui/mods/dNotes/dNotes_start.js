@@ -1,7 +1,10 @@
 (function() {
 
-	$('#sidebar-tabs').append(
-		'                    <li><a href="#notes" data-toggle="pill" data-bind="click_sound: \'default\', rollover_sound: \'default\'">NOTES</a></li>\n'
+	$('.nav-pills').append(
+		'                        <li>\n' +
+		'                                                <a href="#notes" data-toggle="pill" data-bind="click_sound: \'default\', rollover_sound: \'default\'">Notes\n' +
+		'                            </a>\n' +
+		'                        </li>\n'
 	);
 
 	$('.tab-content').append(
@@ -12,6 +15,14 @@
 		'                      </div>\n' +
 		'                    </div>\n'
 	);
+
+	var width = parseInt($('#section_videos').css('width'));
+	width += 50;
+	$('#section_videos').css('width', width+'px');
+
+	width = parseInt($('.community_content').css('width'));
+	width += 50;
+	$('.community_content').css('width', width+'px');
 
 	model.dNotes_notes = ko.observableArray([]);
 	if(localStorage.dNotes_notes)
