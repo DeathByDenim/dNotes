@@ -1,11 +1,11 @@
 {
     "author": "DeathByDenim",
-    "build": "76262",
+    "build": "110069",
     "category": [
         "ui"
     ],
     "context": "client",
-    "date": "2014/12/13",
+    "date": "2018/06/28",
     "description": "Keep notes on players for future reference",
     "description_nl": "Houd notities over spelers bij voor toekomstig gebruik.",
     "description_de": "Führen Sie Notizen über die andere Spieler für zukünftige Verwendung.",
@@ -16,7 +16,7 @@
     "display_name_nl": "Notities",
     "enabled": true,
     "forum": "https://forums.uberent.com/threads/rel-notes-v1-0.55281/",
-    "icon": "http://pamods.github.io/icons/dNotes.png",
+    "icon": "https://github.com/DeathByDenim/dNotes/raw/stable/dNotes.png",
     "id": "dNotes",
     "identifier": "com.pa.DeathByDenim.dNotes",
     "priority": 100,
@@ -52,7 +52,7 @@
         ]
     },
     "signature": "not yet implemented",
-    "version": "1.5",
+    "version": "1.5.1",
     "installpath": "/home/jarno/.local/Uber Entertainment/Planetary Annihilation/mods/dNotes",
     "dependencies": [
         "com.pa.raevn.rfloatframe"
